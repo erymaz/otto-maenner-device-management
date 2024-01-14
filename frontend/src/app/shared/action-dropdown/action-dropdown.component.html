@@ -1,0 +1,23 @@
+<div ngbDropdown class="dropdown form-dropdown" *ngIf="dropdown">
+  <button ngbDropdownToggle class="btn btn-dropdown">
+    <span class="label" *ngIf="dropdown.label">{{ dropdown.label | translate }}:</span>
+    <span class="toggle" [ngClass]="{'fw-bold': filteredActionItem}">{{ dropdown.toggle | translate }}</span>
+  </button>
+  <div ngbDropdownMenu>
+    <ng-container *ngFor="let actionItem of dropdown.actionItems">
+      <ng-container [ngSwitch]="actionItem.type">
+        <ng-container *ngSwitchCase="'SELECT'">
+          <button
+            ngbDropdownItem
+            [disabled]="!!actionItem.disabled || !!dropdown.disabled"
+            (click)="onAction(actionItem)"
+            [ngClass]="{'fw-bold': dropdown.filtered && actionItem === filteredActionItem}"
+          >{{ (actionItem.value || '') | translate }}</button>
+        </ng-container>
+        <ng-container *ngSwitchCase="'SEARCH'">
+          <app-action-search [actionItem]="actionItem" (action)="onAction($event)"></app-action-search>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

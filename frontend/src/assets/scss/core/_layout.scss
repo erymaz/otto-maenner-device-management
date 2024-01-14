@@ -1,0 +1,65 @@
+.main-sidebar {
+  @include shadow;
+  @include main-sidebar;
+  left: 0;
+}
+
+.main-sidebar,
+.main-content {
+  transition: all .5s;
+}
+
+.main-content {
+  padding-left: 290px;
+  padding-right: 30px;
+  padding-top: 80px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: auto;
+  @include custom-scrollbar;
+}
+
+.main-sidebar {
+  .sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 16px;
+    overflow: auto;
+    @include custom-scrollbar;
+  }
+  .sidebar-brand {
+    padding: 40px 0;
+
+    img {
+      cursor: pointer;
+      height: 40px;
+    }
+  }
+  .btn {
+    width: 100%;
+  }
+  .sidebar-menu {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    li {
+      display: block;
+      .btn {
+        margin-bottom: 16px;
+        &:hover {
+          background-color: color_darken(primary, 5%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-sidebar {
+    position: fixed !important;
+    margin-top: 0 !important;
+    z-index: 891;
+  }
+}

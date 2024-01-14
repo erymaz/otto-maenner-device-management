@@ -1,0 +1,24 @@
+<div class="main-sidebar">
+  <aside class="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <img src="assets/images/logo.png" alt="logo" width="140px" (click)="onLogo()">
+    </div>
+    <ul class="sidebar-menu">
+      <ng-container *ngFor="let link of links">
+        <li (click)="onSelect(link)">
+          <button type="button" class="btn btn-primary btn-icon-split" [ngClass]="{'btn-active': selectedNavLink?.id === link.id}">
+            <svg-icon *ngIf="link.icon" src="/assets/svg/{{link.icon}}.svg" class="icon"></svg-icon>
+            <span>{{ link.name | translate }}</span>
+            <svg-icon src="/assets/svg/plus-circle.svg" class="icon-append"></svg-icon>
+          </button>
+        </li>
+      </ng-container>
+    </ul>
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary btn-icon-split justify-content-start" (click)="logout()">
+        <svg-icon src="/assets/svg/sign-out.svg" class="icon"></svg-icon>
+        {{ 'NAV_LINK.LOG_OUT' | translate }}
+      </button>
+    </div>
+  </aside>
+</div>

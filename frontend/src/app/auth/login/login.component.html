@@ -1,0 +1,65 @@
+<section class="section auth-page d-flex align-items-center min-vh-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-5">
+        <div class="card">
+          <div class="card-header flex-column">
+            <div class="login-brand">
+              <img src="assets/images/logo.png" alt="logo" width="140px">
+            </div>
+            <h2>{{ 'AUTH.LOGIN' | translate }}</h2>
+          </div>
+          <div class="card-body">
+            <form *ngIf="form" [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="email" class="form-label">{{ 'AUTH.EMAIL' | translate }}</label>
+                <input
+                  id="email"
+                  type="email"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': email?.invalid && email?.touched }"
+                  name="email"
+                  tabindex="1"
+                  formControlName="email"
+                >
+                <div class="invalid-feedback" *ngIf="email?.invalid && email?.touched">
+                  <ng-container *ngIf="email?.errors?.required">{{ 'VALIDATION_ERROR.EMAIL_REQUIRED' | translate }}</ng-container>
+                  <ng-container *ngIf="email?.errors?.email">{{ 'VALIDATION_ERROR.INVALID_EMAIL' | translate }}</ng-container>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">{{ 'AUTH.PASSWORD' | translate }}</label>
+                <input
+                  id="password"
+                  type="password"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': password?.invalid && password?.touched }"
+                  name="password"
+                  tabindex="2"
+                  formControlName="password"
+                >
+                <div class="invalid-feedback" *ngIf="password?.invalid && password?.touched">
+                  {{ 'VALIDATION_ERROR.PASSWORD_REQUIRED' | translate }}
+                </div>
+              </div>
+              <div class="text-end">
+                <a role="button">
+                  {{ 'AUTH.FORGOT_PASSWORD' | translate }}
+                </a>
+              </div>
+              <div class="invalid-feedback mt-4">{{ errorMsg }}</div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-primary action-btn" tabindex="3" [disabled]="form.disabled">
+                  {{ 'AUTH.LOGIN' | translate }}
+                </button>
+              </div>
+            </form>
+            <div class="mt-4 text-center">
+              {{ 'AUTH.OR' | translate }} <a routerLink="/register">{{ 'AUTH.CREATE_AN_ACCOUNT' | translate }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

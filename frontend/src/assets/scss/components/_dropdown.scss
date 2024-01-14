@@ -1,0 +1,96 @@
+.form-dropdown {
+  min-width: $input-min-width;
+
+  &.show.dropdown {
+    box-shadow: $dropdown-box-shadow;
+  }
+
+  &.show .dropdown-toggle::after {
+    transform: scaleY(-1);
+  }
+
+  &.dropup .dropdown-menu {
+    box-shadow: $dropup-box-shadow;
+  }
+
+  .dropdown-toggle {
+    position: relative;
+    padding-right: $input-btn-padding-x * 2;
+    width: 100%;
+
+    &:not(.btn).form-control {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      border: 0;
+      color: $primary;
+      text-align: left;
+      transition: $input-transition;
+
+      &[aria-expanded='true'] {
+        z-index: 100;
+      }
+
+      &[disabled] {
+        cursor: default;
+      }
+
+      & + .dropdown-menu {
+        margin-top: -1px;
+      }
+    }
+
+    &::after {
+      content: url('/assets/svg/chevron-down.svg');
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding-top: 12px;
+      padding-right: 1rem;
+      position: absolute;
+      border: 0;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    overflow-y: auto;
+    @include custom-scrollbar;
+
+    &[x-placement='top-start'] {
+      margin-top: 3px;
+    }
+
+    .dropdown-item {
+      height: 40px;
+    }
+  }
+}
+
+.dropup,
+.dropdown {
+  .dropdown-menu {
+    box-shadow: $dropdown-box-shadow;
+    min-width: $input-min-width;
+
+    .dropdown-item {
+      outline: none;
+      transition: 0.25s ease;
+      transition-property: color, background-color;
+
+      &:hover,
+      &:focus {
+        border-color: color_darken('white', 5%);
+        background-color: color_darken('white', 5%);
+      }
+    }
+  }
+}

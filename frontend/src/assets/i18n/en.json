@@ -1,0 +1,125 @@
+{
+  "AUTH": {
+    "LOGIN": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "REPEAT_PASSWORD": "Repeat Password",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "INVALID_CREDENTIALS": "Invalid credentials",
+    "OR": "or",
+    "GO_BACK_TO_LOGIN_PAGE": "Go back to login page",
+    "CREATE_AN_ACCOUNT": "Create an account",
+    "ACCOUNT_SUCCESSFULLY_CREATED": "Account successfully created"
+  },
+  "VALIDATION_ERROR": {
+    "EMAIL_REQUIRED": "Email is required",
+    "INVALID_EMAIL": "Please enter a valid email address",
+    "PASSWORD_REQUIRED": "Password is required",
+    "REPEAT_PASSWORD_REQUIRED": "Repeat Password is required",
+    "PASSWORDS_DO_NOT_MATCH": "Passwords do not match",
+    "PASSWORD_MIN_LENGTH": "Password length must be at least 4 characters long",
+    "CUSTOMER_REQUIRED": "Customer is required",
+    "NAME_REQUIRED": "Name is required",
+    "DEVICE_REQUIRED": "Device is required"
+  },
+  "NAV_LINK": {
+    "EDGE_DEVICES": "Edge Devices",
+    "CUSTOMERS": "Customers",
+    "LOG_OUT": "Log out"
+  },
+  "DEVICE": {
+    "ONLINE": "Online",
+    "OFFLINE": "Offline"
+  },
+  "EDGE_DEVICES": {
+    "TOTAL_NUMBER": "Total number of edge devices",
+    "ARE_UP_TO_DATE": "Edge devices that are up-to-date",
+    "ARE_NOT_UP_TO_DATE": "Edge devices that aren’t up-to-date",
+    "ARE_ONLINE": "Edge devices that are online",
+    "ARE_OFFLINE": "Edge devices that are offline"
+  },
+  "ACTION_BUTTON": {
+    "ADD": "Add",
+    "BULK_ACTION": "Bulk action",
+    "PLEASE_CHOOSE": "Please choose",
+    "UPDATE_FIRMWARE": "Update Firmware",
+    "DELETE": "Delete",
+    "SEARCH": "Search",
+    "TYPE_HERE": "Type here",
+    "FILTER": "Filter",
+    "NUMBER_OF_DEVICES": "Number of devices",
+    "FIRMWARE_VERSION": "Firmware version",
+    "CUSTOMERS": "Customers",
+    "STATUS": "Status",
+    "DELETE_DEVICE": "Delete device",
+    "DELETE_CUSTOMER": "Delete customer",
+    "EDIT_DEVICE": "Edit device",
+    "EDIT_CUSTOMER": "Edit customer"
+  },
+  "TABLE": {
+    "EDGE_DEVICE": "Edge device",
+    "CUSTOMER": "Customer",
+    "NAME": "Name",
+    "DEVICE": "Device",
+    "NUMBER_OF_DEVICES": "Number of devices",
+    "NUMBER_OF_EDGE_DEVICES": "Number of edge devices",
+    "DEVICE_STATUS": "Device Status",
+    "STATUS": "Status",
+    "DEVICES_OUTDATED_FIRMWARE": "Devices with outdated firmware",
+    "DEVICES_OFFLINE": "Devices offline",
+    "DATE_LAST_CHANGED": "Date last changed",
+    "FIRMWARE_VERSION": "Firmware version",
+    "ACTIONS": "Actions",
+    "NO_RESULTS_FOUND": "No Results Found",
+    "LOADING": "Loading ..."
+  },
+  "MODALS": {
+    "DELETE_SELECTED_DEVICES_CONFIRM": {
+      "TITLE": "Delete selected devices",
+      "BODY": "Do you really want to delete selected devices?",
+      "CONFIRM": "Yes",
+      "ABORT": "Cancel"
+    },
+    "DELETE_DEVICE_CONFIRM": {
+      "TITLE": "Delete Device",
+      "BODY": "Do you really want to delete this device?",
+      "CONFIRM": "Yes",
+      "ABORT": "Cancel"
+    },
+    "DELETE_SELECTED_CUSTOMERS_CONFIRM": {
+      "TITLE": "Delete selected customers",
+      "BODY": "Do you really want to delete selected customers?",
+      "CONFIRM": "Yes",
+      "ABORT": "Cancel"
+    },
+    "DELETE_CUSTOMER_CONFIRM": {
+      "TITLE": "Delete Customer",
+      "BODY": "Do you really want to delete this customer?",
+      "CONFIRM": "Yes",
+      "ABORT": "Cancel"
+    },
+    "CUSTOMER": {
+      "ADD_TITLE": "Add Customer",
+      "EDIT_TITLE": "Edit Customer",
+      "CONFIRM": "Add",
+      "SAVE": "Save",
+      "ABORT": "Cancel",
+      "DELETE": "Delete",
+      "CUSTOMER": "Customer"
+    },
+    "DEVICE": {
+      "ADD_TITLE": "Add Device",
+      "EDIT_TITLE": "Edit Device",
+      "CONFIRM": "Add",
+      "SAVE": "Save",
+      "ABORT": "Cancel",
+      "DELETE": "Delete device",
+      "NAME": "Name",
+      "CUSTOMER": "Customer",
+      "DEVICE": "Device"
+    }
+  },
+  "HTTP_ERROR": {
+    "504": "Connection between server was interrupted"
+  }
+}

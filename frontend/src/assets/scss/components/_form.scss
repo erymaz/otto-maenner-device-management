@@ -1,0 +1,51 @@
+.form-group {
+  &.floating-addon {
+    position: relative;
+    .input-group-prepend {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: 5;
+    }
+    .input-group-prepend .input-group-text,
+    .input-group-append .input-group-text {
+      border-color: transparent;
+      background-color: transparent;
+      font-size: 20px;
+    }
+    .form-control {
+      border-radius: 3px;
+      padding-left: 40px;
+      border: 0;
+      + .form-control {
+        border-radius: 0 3px 3px 0;
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+.form-label {
+  font-size: 13px;
+  color: $gray-700;
+}
+
+.form-control {
+  border: 1px solid $input-border-color;
+  border-radius: 0.5px;
+  padding: 16px;
+  height: $input-height-lg;
+  min-width: $input-min-width !important;
+}
+
+.invalid-feedback {
+  display: block;
+  font-size: 12px;
+}
+
+.was-validated .form-control:invalid:focus,
+.form-control:focus,
+.form-control.is-invalid:focus {
+  box-shadow: $input-box-shadow;
+}

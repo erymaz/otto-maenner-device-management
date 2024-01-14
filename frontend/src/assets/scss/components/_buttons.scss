@@ -1,0 +1,108 @@
+.btn-primary,
+.btn-primary.disabled {
+  background-color: color(primary);
+  border-color: color(primary);
+  &:focus {
+    background-color: color_darken(primary, 5%);
+    border-color: color_darken(primary, 5%);
+    &:active {
+      background-color: color_darken(primary, 5%);
+    }
+  }
+  &:active,
+  &:hover {
+    border-color: color_darken(primary, 5%);
+    background-color: color_darken(primary, 5%);
+  }
+}
+
+.btn {
+  font-size: $button-size;
+  border-radius: 0;
+  padding: 0.375rem 1rem;
+  min-width: 110px;
+  height: $btn-height;
+  line-height: 18px;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &.btn-icon-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon,
+    .icon-append {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon {
+      padding-right: 14px;
+    }
+
+    .icon-append {
+      margin-left: auto;
+    }
+  }
+  &.btn-icon {
+    padding: 0;
+    min-width: auto;
+  }
+  &.btn-active {
+    background-color: color(active);
+    border-color: color(active);
+    &:focus {
+      background-color: color_darken(active, 5%) !important;
+      &:active {
+        background-color: color_darken(active, 5%) !important;
+      }
+    }
+    &:active,
+    &:hover {
+      background-color: color_darken(active, 5%) !important;
+    }
+  }
+}
+
+.btn-dropdown {
+  color: $body-color;
+  background-color: $white;
+  border-color: $white;
+  font-size: 14px;
+  &:hover {
+    border-color: color_darken('white', 5%);
+    background-color: color_darken('white', 5%);
+  }
+}
+
+.btn-danger {
+  background-color: color('red');
+  border-color: color('red');
+}
+
+.btn-outline-secondary {
+  color: $gray-700;
+
+  &:hover {
+    background-color: $gray-700;
+  }
+}
+
+.btn-outline-secondary,
+.btn-outline-secondary:hover {
+  border-color: $gray-700;
+}
+
+.btn-outline-icon {
+  min-width: 47px;
+  min-height: 47px;
+  padding: 0;
+  border: 1px solid $gray-300;
+  border-radius: 0.5px;
+  &:hover {
+    border-color: color_darken('light', 5%);
+    background-color: color_darken('light', 5%);
+  }
+}

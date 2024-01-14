@@ -1,0 +1,23 @@
+@import 'variables';
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .status {
+    line-height: normal;
+
+    &.circle {
+      border-radius: 50%;
+    }
+  }
+
+  .label {
+    padding-left: 10px;
+  }
+
+  .label-value {
+    color: $gray-700;
+  }
+}

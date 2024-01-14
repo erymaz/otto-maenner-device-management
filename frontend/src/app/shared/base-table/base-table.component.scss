@@ -1,0 +1,12 @@
+@import 'variables';
+
+.action-items {
+  display: flex;
+  margin-bottom: 12px;
+
+  .action-item {
+    &:not(:last-child) {
+      padding-right: 14px;
+    }
+  }
+}

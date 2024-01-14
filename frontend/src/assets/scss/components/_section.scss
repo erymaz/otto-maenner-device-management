@@ -1,0 +1,43 @@
+.section {
+  position: relative;
+  z-index: 1;
+  .section-header {
+    display: flex;
+    align-items: center;
+    h1 {
+      margin-bottom: 0;
+      font-weight: 400;
+      display: inline-block;
+      font-size: 36px;
+      color: color(primary);
+    }
+    .btn:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .section {
+    background-color: $white;
+    .section-header {
+      flex-wrap: wrap;
+      margin-bottom: 20px !important;
+      h1 {
+        font-size: 18px;
+      }
+      .float-right {
+        display: inline-block;
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+    &.auth-page {
+      .card {
+        .card-body {
+          padding: 8px 20px !important;
+        }
+      }
+    }
+  }
+}

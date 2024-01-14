@@ -1,0 +1,6 @@
+@import 'variables', 'mixins';
+
+:host {
+  overflow: auto;
+  @include custom-scrollbar;
+}

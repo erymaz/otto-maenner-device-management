@@ -1,0 +1,15 @@
+<div *ngIf="form && item" class="form-group floating-addon" [formGroup]="form">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <svg-icon src="/assets/svg/search.svg" class="icon"></svg-icon>
+      </div>
+    </div>
+    <input
+      type="{{ item?.format || 'text'}}"
+      class="form-control"
+      [placeholder]="(item?.placeholder || '') | translate"
+      formControlName="search"
+    >
+  </div>
+</div>

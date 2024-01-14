@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ content.title | translate }}</h4>
+
+  <a role="button" class="close-btn" (click)="close()">
+    <svg-icon src="/assets/svg/x.svg"></svg-icon>
+  </a>
+</div>
+
+<div class="modal-body" *ngIf="form" [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  <input type="text" style="display:none" />
+  <div class="mb-3 w-100">
+    <label for="name" class="form-label">{{ 'MODALS.DEVICE.NAME' | translate }}</label>
+    <input
+      id="name"
+      type="text"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': name?.invalid && name?.touched }"
+      name="name"
+      formControlName="name"
+    >
+    <div class="invalid-feedback" *ngIf="name?.invalid && name?.touched">
+      <ng-container *ngIf="name?.errors?.required">{{ 'VALIDATION_ERROR.NAME_REQUIRED' | translate }}</ng-container>
+    </div>
+  </div>
+  <div class="mb-3 w-100">
+    <label for="customer" class="form-label">{{ 'MODALS.DEVICE.CUSTOMER' | translate }}</label>
+    <ng-select
+      labelForId="customer"
+      bindLabel="name"
+      bindValue="id"
+      [items]="customers"
+      [clearable]="false"
+      formControlName="customerId"
+    ></ng-select>
+  </div><div class="mb-3 w-100">
+    <label for="device" class="form-label">{{ 'MODALS.DEVICE.DEVICE' | translate }}</label>
+    <input
+      id="device"
+      type="text"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': device?.invalid && device?.touched }"
+      name="device"
+      formControlName="device"
+    >
+    <div class="invalid-feedback" *ngIf="device?.invalid && device?.touched">
+      <ng-container *ngIf="device?.errors?.required">{{ 'VALIDATION_ERROR.DEVICE_REQUIRED' | translate }}</ng-container>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="close()">
+    {{ content.abort | translate }}
+  </button>
+  <button *ngIf="deviceRequest" type="button" class="btn btn-danger btn-icon-split" (click)="onDelete()">
+    <svg-icon src="/assets/svg/trash-white.svg" class="icon"></svg-icon>
+    {{ content.delete | translate }}
+  </button>
+  <button type="button" class="btn btn-primary ms-auto" (click)="onSubmit()">
+    {{ content.confirm | translate }}
+  </button>
+</div>

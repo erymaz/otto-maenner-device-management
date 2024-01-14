@@ -1,0 +1,17 @@
+{
+  "src/**/!(*.spec|test).ts": [
+    "gts fix"
+  ],
+  "src/{test.ts,**/*.spec.ts}": [
+    "gts fix"
+  ],
+  "e2e/**/*.ts": [
+    "gts fix"
+  ],
+  "{e2e/src,src}/**/*.{html}": [
+    "prettier --write"
+  ],
+  "{e2e/src,src}/**/*.{js,css,scss,sass,less}": [
+    "prettier --write"
+  ]
+}

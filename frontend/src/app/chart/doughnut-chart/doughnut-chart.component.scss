@@ -1,0 +1,19 @@
+.doughnut-chart {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  canvas {
+    max-width: 124px;
+    max-height: 124px;
+  }
+
+  .kpi {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+  }
+}

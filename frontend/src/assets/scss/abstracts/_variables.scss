@@ -1,0 +1,218 @@
+// Colors
+$white: #fff;
+$gray-100: #fafafa;
+$gray-200: #efefef;
+$gray-300: #e9e9e9;
+$gray-400: #e2e2e2;
+$gray-500: #cecece;
+$gray-600: #9f9f9f;
+$gray-700: #8a8a8c;
+$gray-800: #484848;
+$gray-900: #393939;
+$black: #000;
+
+$blue: #0091d2;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #e2383a;
+$orange: #fd7e14;
+$active: #f2a725;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$fontdark: $gray-700;
+
+$primary: $blue;
+$secondary: $fontdark;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+
+$colors: (
+  'white': $white,
+  'blue': $blue,
+  'indigo': $indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'primary': $primary,
+  'active': $active,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+  'font': $gray-700,
+);
+
+// Options
+$enable-rounded: false;
+
+// Body
+$body-bg: #f4f8fb;
+$body-color: #333333;
+
+// Links
+$link-color: $body-color;
+$link-decoration: none;
+$link-hover-color: $gray-600;
+$link-hover-decoration: underline;
+
+// Grid columns
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-row-columns: 6;
+
+// Components
+$border-color: $gray-400;
+$border-radius: 0.25rem;
+$border-radius-lg: 0.625rem;
+
+$font-size-base: 1rem;
+$font-size-lg: 1.1rem;
+$font-size-sm: 0.625rem;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: bold;
+$font-weight-bolder: bolder;
+
+$headings-font-weight: bold;
+$headings-line-height: 1.3;
+
+$small-font-size: $font-size-sm;
+
+// Tables
+$table-cell-padding-x: 0.5rem;
+$table-cell-padding-y: 1.25rem;
+$table-cell-padding-sm: 0.5rem;
+
+$table-bg: $white;
+$table-accent-bg: $gray-100;
+
+$table-border-width: 1px;
+$table-border-color: $gray-200;
+
+$table-head-bg: $gray-200;
+
+$table-striped-order: odd;
+
+$table-bordered-cell-height: 46px;
+
+// Buttons + Forms
+$input-btn-padding-y: 0.75rem;
+$input-btn-padding-x: 1.25rem;
+
+$input-btn-focus-width: 0;
+$input-btn-focus-box-shadow: none;
+
+// Buttons
+$btn-line-height: normal;
+
+$btn-font-weight: $font-weight-normal;
+$btn-box-shadow: none;
+$btn-active-box-shadow: none;
+
+$btn-border-width: 1px;
+
+// Forms
+$label-margin-bottom: 0.5rem;
+
+$input-padding-y-sm: 0.5rem;
+$input-padding-x-sm: 1rem;
+$input-font-size-sm: $font-size-base;
+
+$input-bg: transparent;
+$input-disabled-bg: $light;
+
+$input-color: $body-color;
+$input-border-color: $gray-300;
+$input-box-shadow: none;
+
+$input-border-radius: 0;
+
+$input-focus-border-color: $dark;
+$input-focus-color: $body-color;
+
+$input-placeholder-color: $gray-600;
+
+$btn-height: 48px;
+$input-height-sm: 36px;
+$input-height-lg: 55px;
+$input-min-width: 8rem;
+
+// Navs
+$nav-link-padding-y: 0.5rem;
+$nav-link-padding-x: 1rem;
+
+// Dropdowns
+$dropdown-min-width: 0;
+$dropdown-padding-y: 0.5rem;
+$dropdown-font-size: $font-size-base;
+$dropdown-color: $secondary;
+$dropdown-bg: $white;
+$dropdown-border-radius: 0;
+$dropdown-border-width: 0;
+$dropdown-divider-bg: $gray-200;
+$dropdown-box-shadow: 0 3px 6px #00000029;
+
+$dropdown-link-color: rgba($secondary, 87%);
+$dropdown-link-hover-color: rgba($secondary, 87%);
+$dropdown-link-hover-bg: darken($white, 5%);
+
+$dropdown-link-active-color: $secondary;
+$dropdown-link-active-bg: darken($white, 10%);
+
+$dropdown-link-disabled-color: $gray-600;
+
+$dropdown-item-padding-y: 0.25rem;
+$dropdown-item-padding-x: 1.25rem;
+
+$dropdown-header-color: $body-color;
+
+$dropup-box-shadow: 0 0 6px #00000029;
+
+// Cards
+$card-spacer-y: 0.75rem;
+$card-spacer-x: 1.25rem;
+$card-border-width: 0;
+
+// Modals
+$modal-header-padding-y: 0.5rem;
+$modal-header-padding-x: 1rem;
+
+// Header
+$header-height: 56px;
+$header-padding-y: 0;
+$header-padding-x: 2rem;
+
+// Footer
+$footer-padding-y: 1rem;
+$footer-padding-x: 2rem;
+
+// Panel
+$panel-padding-y: 0.75rem;
+$panel-padding-x: 2rem;
+
+// Checkbox
+$checkbox-size: 15px;
+$checkbox-tick-height: 9px;
+$checkbox-tick-width: 5px;
+$checkbox-border-radius: 3px;
+
+$button-size: 18px;
+
+$font_family: 'Arial', 'Helvetica', sans-serif;

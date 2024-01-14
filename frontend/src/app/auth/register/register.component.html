@@ -1,0 +1,85 @@
+<section class="section auth-page d-flex align-items-center min-vh-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-5">
+        <div class="card">
+          <div class="card-header flex-column">
+            <div class="login-brand">
+              <img src="assets/images/logo.png" alt="logo" width="140px">
+            </div>
+            <h2>{{ 'AUTH.CREATE_AN_ACCOUNT' | translate }}</h2>
+          </div>
+          <div class="card-body">
+            <ng-container *ngIf="!success">
+              <form *ngIf="form" [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="email" class="form-label">{{ 'AUTH.EMAIL' | translate }}</label>
+                  <input
+                    id="email"
+                    type="email"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': email?.invalid && email?.touched }"
+                    name="email"
+                    tabindex="1"
+                    formControlName="email"
+                  >
+                  <div class="invalid-feedback" *ngIf="email?.invalid && email?.touched">
+                    <ng-container *ngIf="email?.errors?.required">{{ 'VALIDATION_ERROR.EMAIL_REQUIRED' | translate }}</ng-container>
+                    <ng-container *ngIf="email?.errors?.email">{{ 'VALIDATION_ERROR.INVALID_EMAIL' | translate }}</ng-container>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">{{ 'AUTH.PASSWORD' | translate }}</label>
+                  <input
+                    id="password"
+                    type="password"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': password?.invalid && password?.touched }"
+                    name="password"
+                    tabindex="2"
+                    formControlName="password"
+                  >
+                  <div class="invalid-feedback" *ngIf="password?.invalid && password?.touched">
+                    <ng-container *ngIf="password?.errors?.required">{{ 'VALIDATION_ERROR.PASSWORD_REQUIRED' | translate }}</ng-container>
+                    <ng-container *ngIf="password?.errors?.minlength">{{ 'VALIDATION_ERROR.PASSWORD_MIN_LENGTH' | translate }}</ng-container>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="repeat-password" class="form-label">{{ 'AUTH.REPEAT_PASSWORD' | translate }}</label>
+                  <input
+                    id="repeat-password"
+                    type="password"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': repeatPassword?.invalid && repeatPassword?.touched }"
+                    name="repeat-password"
+                    tabindex="3"
+                    formControlName="repeatPassword"
+                  >
+                  <div class="invalid-feedback" *ngIf="repeatPassword?.invalid && repeatPassword?.touched">
+                    <ng-container *ngIf="repeatPassword?.errors?.required">{{ 'VALIDATION_ERROR.REPEAT_PASSWORD_REQUIRED' | translate }}</ng-container>
+                    <ng-container *ngIf="repeatPassword?.errors?.matchCompare">{{ 'VALIDATION_ERROR.PASSWORDS_DO_NOT_MATCH' | translate }}</ng-container>
+                  </div>
+                </div>
+                <div class="invalid-feedback">{{ errorMsg }}</div>
+                <div class="mb-3">
+                  <button type="submit" class="btn btn-primary action-btn" tabindex="4" [disabled]="form.disabled">
+                    {{ 'AUTH.CREATE_AN_ACCOUNT' | translate }}
+                  </button>
+                </div>
+              </form>
+              <div class="mt-4 text-center">
+                {{ 'AUTH.OR' | translate }} <a routerLink="/login">{{ 'AUTH.LOGIN' | translate }}</a>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="success">
+              <div class="text-center text-muted">{{ 'AUTH.ACCOUNT_SUCCESSFULLY_CREATED' | translate }}</div>
+              <div class="text-center mt-4">
+                <a routerLink="/login">{{ 'AUTH.GO_BACK_TO_LOGIN_PAGE' | translate }}</a>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+
+<section class="section" *ngIf="device">
+  <div class="section-header">
+    <button type="button" class="btn btn-icon" (click)="onBack()">
+      <svg-icon src="/assets/svg/back-arrow-circle.svg"></svg-icon>
+    </button>
+    <h1>{{ device.name }}</h1>
+    <button type="button" class="btn btn-danger btn-icon-split ms-auto" (click)="onDelete()">
+      <svg-icon src="/assets/svg/trash-white.svg" class="icon"></svg-icon>
+      {{ 'ACTION_BUTTON.DELETE_DEVICE' | translate }}
+    </button>
+    <button type="button" class="btn btn-danger btn-icon-split btn-active" (click)="onEdit()">
+      <svg-icon src="/assets/svg/pencil-white.svg" class="icon"></svg-icon>
+      {{ 'ACTION_BUTTON.EDIT_DEVICE' | translate }}
+    </button>
+  </div>
+  <div class="section-body mt-4">
+    <div class="grid-wrapper">
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.NAME' | translate }}:</div>
+        <div class="value">{{ device.name }}</div>
+      </div>
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.DEVICE' | translate }}:</div>
+        <div class="value">{{ device.device }}</div>
+      </div>
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.CUSTOMER' | translate }}:</div>
+        <div class="value"><a routerLink="/customers/{{device.customer?.id}}">{{ device.customer?.name }}</a></div>
+      </div>
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.DATE_LAST_CHANGED' | translate }}:</div>
+        <div class="value">{{ getDateFormatted(device.updatedAt) }}</div>
+      </div>
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.STATUS' | translate }}:</div>
+        <div class="value">{{ (device.online ? 'DEVICE.ONLINE' : 'DEVICE.OFFLINE') | translate }}</div>
+      </div>
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.FIRMWARE_VERSION' | translate }}:</div>
+        <div class="value">
+          <button type="button" class="btn btn-primary">{{ 'ACTION_BUTTON.UPDATE_FIRMWARE' | translate }}</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="grid-wrapper">
+      <div class="grid-chart-cell">
+        <app-doughnut-chart *ngIf="deviceUpToDate" [config]="deviceUpToDate"></app-doughnut-chart>
+      </div>
+      <div class="grid-chart-cell">
+        <app-doughnut-chart *ngIf="deviceStatus" [config]="deviceStatus"></app-doughnut-chart>
+      </div>
+    </div>
+  </div>
+</section>

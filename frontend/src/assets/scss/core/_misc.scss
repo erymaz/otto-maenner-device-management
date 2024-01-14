@@ -1,0 +1,140 @@
+:root {
+  /* Colors */
+  --blue: #{color('blue')};
+  --indigo: #{color('indigo')};
+  --purple: #{color('purple')};
+  --pink: #{color('pink')};
+  --red: #{color('red')};
+  --orange: #{color('orange')};
+  --yellow: #{color('yellow')};
+  --green: #{color('green')};
+  --teal: #{color('teal')};
+  --cyan: #{color('cyan')};
+  --primary: #{color(primary)};
+  --secondary: #{color(secondary)};
+  --success: #{color(success)};
+  --info: #{color(info)};
+  --warning: #{color(warning)};
+  --danger: #{color(danger)};
+  --light: #{color(light)};
+  --dark: #{color(dark)};
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font_family;
+  background: $body-bg;
+  color: $body-color;
+  font-size: $font-size-base;
+  overflow: hidden;
+}
+
+a,
+a:hover {
+  color: color(primary);
+}
+
+a {
+  color: color(primary);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+hr {
+  opacity: 1;
+  border: 1px solid $gray-300;
+}
+
+.auth-page {
+  .login-brand {
+    margin-top: 26px;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    margin-bottom: 0;
+    .card-header {
+      border: 0;
+    }
+    .card-body {
+      padding: 8px 65px 40px 65px;
+    }
+  }
+
+  .action-btn {
+    margin-top: 25px;
+    width: 100%;
+  }
+}
+
+.toast-container {
+  .ngx-toastr {
+    opacity: 0.8 !important;
+    font-size: 14px;
+  }
+}
+
+.ng-select {
+  .ng-select-container {
+    border: 1px solid $input-border-color;
+    border-radius: 0;
+
+    .ng-value-container {
+      padding-left: 16px;
+      .ng-input {
+        > input {
+          height: $input-height-lg;
+        }
+      }
+    }
+  }
+
+  &.ng-select-single {
+    .ng-select-container {
+      height: $input-height-lg;
+
+      .ng-value-container {
+        .ng-input {
+          top: 50%;
+          transform: translateY(-50%);
+          padding-left: 16px;
+        }
+      }
+    }
+  }
+
+  &.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+    border-color: #86b7fe;
+    box-shadow: $input-box-shadow;
+  }
+
+  .ng-dropdown-panel {
+    &.ng-select-bottom {
+      border-radius: 0;
+      .ng-dropdown-panel-items {
+        .ng-option {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .ng-dropdown-panel-items {
+      .ng-option {
+        padding: 10px 16px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .auth-page {
+    h2 {
+      font-size: 36px;
+    }
+  }
+}

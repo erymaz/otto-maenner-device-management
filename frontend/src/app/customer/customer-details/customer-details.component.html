@@ -1,0 +1,36 @@
+
+<section class="section" *ngIf="customer">
+  <div class="section-header">
+    <button type="button" class="btn btn-icon" (click)="onBack()">
+      <svg-icon src="/assets/svg/back-arrow-circle.svg"></svg-icon>
+    </button>
+    <h1>{{ customer.name }}</h1>
+    <button type="button" class="btn btn-danger btn-icon-split ms-auto" (click)="onDelete()">
+      <svg-icon src="/assets/svg/trash-white.svg" class="icon"></svg-icon>
+      {{ 'ACTION_BUTTON.DELETE_CUSTOMER' | translate }}
+    </button>
+    <button type="button" class="btn btn-danger btn-icon-split btn-active" (click)="onEdit()">
+      <svg-icon src="/assets/svg/pencil-white.svg" class="icon"></svg-icon>
+      {{ 'ACTION_BUTTON.EDIT_CUSTOMER' | translate }}
+    </button>
+  </div>
+  <div class="section-body mt-4">
+    <div class="grid-wrapper">
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.NAME' | translate }}:</div>
+        <div class="value">{{ customer.name }}</div>
+      </div>
+      <div class="grid-cell">
+        <div class="label">{{ 'TABLE.NUMBER_OF_EDGE_DEVICES' | translate }}:</div>
+        <div class="value">{{ totalDevices }}</div>
+      </div>
+    </div>
+    <hr>
+    <app-base-table
+      [config]="config"
+      [items]="items"
+      [loading]="loading"
+      (action)="onAction($event)"
+    ></app-base-table>
+  </div>
+</section>

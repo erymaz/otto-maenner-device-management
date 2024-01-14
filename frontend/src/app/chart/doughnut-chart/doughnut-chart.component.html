@@ -1,0 +1,6 @@
+<div class="doughnut-chart">
+  <div *ngIf="config?.showTotal" class="kpi" [ngStyle]="{'color': config?.color}">
+    {{ totalKpi }}
+  </div>
+  <canvas #doughnutChart id="doughnutChart"></canvas>
+</div>

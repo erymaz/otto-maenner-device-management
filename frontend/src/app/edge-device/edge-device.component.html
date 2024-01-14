@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="section-header">
+    <h1 *ngIf="activeNavLink">{{ activeNavLink.name | translate }}</h1>
+    <button class="btn btn-primary btn-icon-split ms-auto" (click)="onAdd()">
+      <svg-icon src="/assets/svg/plus.svg" class="icon"></svg-icon>
+      <span>{{ 'ACTION_BUTTON.ADD' | translate }}</span>
+    </button>
+  </div>
+  <div class="section-body mt-4">
+    <div class="grid-wrapper">
+      <div class="grid-cell-total">
+        <div>{{ 'EDGE_DEVICES.TOTAL_NUMBER' | translate }}</div>
+        <div class="total-devices mt-2">{{totalDevices}}</div>
+      </div>
+      <div class="grid-cell">
+        <app-doughnut-chart *ngIf="deviceUpToDate" [config]="deviceUpToDate"></app-doughnut-chart>
+        <div class="chart-legend">
+          <app-status-legend *ngFor="let segment of deviceUpToDate?.segments" [legend]="segment.legend"></app-status-legend>
+        </div>
+      </div>
+      <div class="grid-cell">
+        <app-doughnut-chart *ngIf="deviceStatus" [config]="deviceStatus"></app-doughnut-chart>
+        <div class="chart-legend">
+          <app-status-legend *ngFor="let segment of deviceStatus?.segments" [legend]="segment.legend"></app-status-legend>
+        </div>
+      </div>
+    </div>
+    <app-base-table
+      [config]="config"
+      [items]="items"
+      [loading]="loading"
+      (action)="onAction($event)"
+    ></app-base-table>
+  </div>
+</section>

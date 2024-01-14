@@ -1,0 +1,46 @@
+@import 'variables', 'mixins';
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+hr {
+  margin: 60px 0;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  .grid-chart-cell,
+  .grid-cell {
+    padding: 12px 30px;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: auto;
+    @include custom-scrollbar;
+  }
+
+  .grid-cell {
+    .label {
+      color: $gray-700;
+    }
+    .value {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: auto;
+      min-height: 48px;
+    }
+  }
+
+  .grid-chart-cell {
+    min-height: 165px;
+    max-height: 200px;
+    justify-content: center;
+  }
+}

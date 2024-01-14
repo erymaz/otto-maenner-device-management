@@ -1,0 +1,38 @@
+@import 'variables';
+@import 'mixins';
+
+.grid-wrapper {
+  margin-bottom: 40px;
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: 2fr repeat(2, 3fr);
+  gap: 24px;
+
+  .grid-cell-total,
+  .grid-cell {
+    padding: 20px;
+    min-height: 165px;
+    max-height: 200px;
+    background-color: $white;
+    overflow: auto;
+    @include custom-scrollbar;
+  }
+
+  .grid-cell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.total-devices {
+  font-size: 48px;
+  color: #0091d2;
+}
+
+.chart-legend {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 18px;
+  padding-left: 24px;
+}

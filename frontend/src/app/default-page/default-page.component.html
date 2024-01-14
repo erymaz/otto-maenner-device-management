@@ -1,0 +1,7 @@
+<app-sidebar
+  [navLinks]="navLinks"
+  (navLinkSelect)="onNavLinkSelect($event)"
+></app-sidebar>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

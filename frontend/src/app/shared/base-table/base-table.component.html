@@ -1,0 +1,93 @@
+<div class="base-table" *ngIf="config">
+  <div class="action-items" *ngIf="config.actionItems">
+    <ng-container *ngFor="let actionItem of config.actionItems">
+      <ng-container [ngSwitch]="actionItem.type">
+        <ng-container *ngSwitchCase="'DROPDOWN'">
+          <app-action-dropdown
+            class="action-item"
+            [ngClass]="actionItem.classes"
+            [dropdown]="actionItem.dropdown"
+            (action)="onAction($event)"
+          ></app-action-dropdown>
+        </ng-container>
+        <ng-container *ngSwitchCase="'DROPDOWN_CHECKABLE'">
+          <app-action-dropdown
+            class="action-item"
+            [ngClass]="actionItem.classes"
+            [dropdown]="actionItem.dropdown"
+            (action)="onAction($event)"
+          ></app-action-dropdown>
+        </ng-container>
+        <ng-container *ngSwitchCase="'SEARCH'">
+          <app-action-search
+            class="action-item"
+            [ngClass]="actionItem.classes"
+            [actionItem]="actionItem"
+            [style.width.px]="276"
+            (action)="onAction($event)"
+          ></app-action-search>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+
+  <table class="table" [ngClass]="{ 'loading': loading }">
+    <tr class="loading-spinner" *ngIf="loading">
+      <svg-icon src="/assets/svg/spinner.svg" class="spinner"></svg-icon>
+      {{ 'TABLE.LOADING' | translate }}
+    </tr>
+    <thead>
+      <tr>
+        <th *ngIf="config.checkable" class="checkbox-wrapper">
+          <app-checkbox [(ngModel)]="allItemsChecked" (changed)="onAllItemChecked()"></app-checkbox>
+        </th>
+        <th *ngFor="let cell of cells" [ngClass]="cell.classes">
+          <div [ngClass]="{'sortable': cell.sortable}">
+            <span *ngIf="cell.title">{{ cell.title | translate }}</span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items" class="row-clickable" (click)="onRow(item)">
+        <td *ngIf="config.checkable" class="checkbox-wrapper">
+          <app-checkbox #rowCheckbox (changed)="onItemChecked($event, item)" (click)="onItemCheckClick($event)"></app-checkbox>
+        </td>
+        <td *ngFor="let cell of cells">
+          <ng-container [ngSwitch]="cell.type">
+            <ng-container *ngSwitchCase="'TEXT'">
+              <ng-container *ngIf="cell.property">{{ getCellData(item, cell) }}</ng-container>
+            </ng-container>
+            <ng-container *ngSwitchCase="'BUTTONS'">
+              <ng-container *ngIf="cell.buttons?.length">
+                <div class="table-btn">
+                  <button
+                    *ngFor="let btn of cell.buttons"
+                    type="button"
+                    class="btn"
+                    [ngClass]="btn.classes"
+                    (click)="onButton(item, btn, $event)"
+                  >
+                    <svg-icon *ngIf="btn.icon" src="/assets/svg/{{btn.icon}}.svg" class="icon"></svg-icon>
+                    <span *ngIf="btn.name">{{ btn.name | translate }}</span>
+                  </button>
+                </div>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngSwitchCase="'DATETIME'">
+              <ng-container *ngIf="cell.property">{{ getDateFormatted(item, cell) }}</ng-container>
+            </ng-container>
+            <ng-container *ngSwitchCase="'STATUS'">
+              <app-status-legend *ngIf="item.statusLegend" [legend]="item.statusLegend"></app-status-legend>
+            </ng-container>
+          </ng-container>
+        </td>
+      </tr>
+      <tr *ngIf="!items?.length">
+        <td [attr.colspan]="config.checkable ? cells.length + 1 : cells.length">
+          <div class="no-results" *ngIf="!loading">{{ 'TABLE.NO_RESULTS_FOUND' | translate }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

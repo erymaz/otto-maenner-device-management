@@ -1,0 +1,91 @@
+@mixin custom-scrollbar($size: 6px) {
+  &::-webkit-scrollbar-track {
+    background-color: $gray-400;
+  }
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background-color: $gray-400;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray-600;
+  }
+}
+
+@mixin absolute-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin shadow($size: 0 4px 8px, $color: rgba(0, 0, 0, 0.03)) {
+  box-shadow: $size $color;
+}
+
+@mixin card_base($border-radius: 3px) {
+  @include shadow();
+  background-color: #fff;
+  border-radius: $border-radius;
+  border: none;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+@mixin shadow-lighten($color, $amount: 15%) {
+  box-shadow: 0 2px 6px color_lighten($color, $amount);
+}
+
+@mixin button-shadow($color, $amount: 15%) {
+  @include shadow-lighten($color, $amount);
+}
+
+@mixin icon-shadow($color, $amount: 15%) {
+  box-shadow: 0 4px 8px color_lighten($color, $amount);
+}
+
+@mixin main-sidebar($z-index: 880) {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 256px;
+  background-color: #fff;
+  z-index: $z-index;
+}
+
+@mixin overlay(
+  $z-index: 99,
+  $background-color: rgba(255, 255, 255, 0.5),
+  $background-image: false
+) {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $background-color;
+  @if $background-image != false {
+    background-image: $background-image;
+  }
+  z-index: $z-index;
+}
+
+@mixin custom-scrollbar($size: 6px) {
+  &::-webkit-scrollbar-track {
+    background-color: $gray-400;
+  }
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background-color: $gray-400;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray-600;
+  }
+}
